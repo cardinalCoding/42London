@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcorte-r <bcorte-r@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 13:55:59 by bcorte-r          #+#    #+#             */
-/*   Updated: 2024/03/14 00:43:51 by bcorte-r         ###   ########.fr       */
+/*   Created: 2024/03/14 00:37:31 by bcorte-r          #+#    #+#             */
+/*   Updated: 2024/03/14 00:47:33 by bcorte-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-# include <unistd.h>
-# include <string.h>
-# include <stdlib.h>
-
-// Node structure for doubly linked list
-struct Node {
-    int data;
-    struct Node* next;
-    struct Node* prev;
-};
-
-#endif
+// Sequence of operations for sorting
+void sa(struct Node** top) {
+    if (*top == NULL || (*top)->next == NULL)
+        return;
+    int temp = (*top)->data;
+    (*top)->data = (*top)->next->data;
+    (*top)->next->data = temp;
+}

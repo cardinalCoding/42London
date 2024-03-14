@@ -13,6 +13,8 @@ Node* createNode(int data);
 void push(Node** top, int data);
 int pop(Node** top);
 void printStack(Node* top);
+
+//Squence
 void sa(Node** top);
 void sb(Node** top);
 void ss(Node** top_a, Node** top_b);
