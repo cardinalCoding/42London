@@ -6,12 +6,15 @@
 /*   By: bcorte-r <bcorte-r@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 00:37:31 by bcorte-r          #+#    #+#             */
-/*   Updated: 2024/03/14 20:47:51 by bcorte-r         ###   ########.fr       */
+/*   Updated: 2024/03/15 11:39:52 by bcorte-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
+/*
+    this sequence swaps the top node of
+    a list. 
+*/
 void swap(struct Node** top)
 {
     if (*top == NULL || (*top)->next == NULL)
@@ -27,7 +30,7 @@ void swap(struct Node** top)
 */ 
 void sa(struct Node** top_a) {
     swap(top_a);
-    printf("sa");
+    printf("sa\n");
 }
 /*
     this is the sequence for the sb
@@ -35,16 +38,17 @@ void sa(struct Node** top_a) {
     of the stack.
 */
 void sb(struct Node** top_b){
-    sa(top_b);
-    printf("Sb");
+    swap(top_b);
+    printf("Sb\n");
 }
 /*
     this operation is SS it doing 
     SA and SB at the same time. 
 */
 void ss(struct Node** top_a, struct Node** top_b){
-    sa(top_a);
-    sb(top_b);
+    swap(top_a);
+    swap(top_b);
+    printf("ss\n");
 }
 
 
